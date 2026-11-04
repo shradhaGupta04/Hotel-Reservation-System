@@ -6,9 +6,16 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class HotelReservationSystem {
-    private static final String url = "jdbc:mysql://localhost:3306/hotel_db";
-    private static final String username = "root";
-    private static final String password = "shradha";
+   
+private static final String url =
+        "jdbc:mysql://localhost:3306/hotel_db";
+
+private static final String username =
+        System.getenv().getOrDefault("HOTEL_DB_USERNAME", "root");
+
+private static final String password =
+        System.getenv("HOTEL_DB_PASSWORD");
+
 
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
